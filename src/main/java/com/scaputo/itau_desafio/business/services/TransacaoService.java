@@ -33,4 +33,8 @@ public class TransacaoService {
         transactionList.add(transactionRequestDTO);
     }
 
+    public void cleanTransactions() {
+        transactionList.clear();
+    }
+
 }

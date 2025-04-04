@@ -1,5 +1,8 @@
 # desafio-itau-backend
 
+## Disclaimer: 
+Tomei a liberade de manter o padrão em ingles. O desafio pede em portugues, porém é um repositorio apenas para estudo.
+
 # Itaú Unibanco - Desafio de Programação
 
 Este é um desafio bacana tanto de desenvolvimento de software quanto de engenharia de software. Queremos testar sua capacidade de construir um software com várias partes diferentes funcionando em conjunto!

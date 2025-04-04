@@ -33,8 +33,19 @@ public class TransacaoService {
         transactionList.add(transactionRequestDTO);
     }
 
+
     public void cleanTransactions() {
         transactionList.clear();
     }
 
+
+    public List<TransactionRequestDTO> searchTransactions(Integer searchInterval) {
+
+        OffsetDateTime dateTimeInterval = OffsetDateTime.now().minusSeconds(searchInterval);
+
+        return transactionList.stream()
+                .filter(transaction -> transaction.dataHora().isAfter(dateTimeInterval))
+                .toList();
+
+    }
 }

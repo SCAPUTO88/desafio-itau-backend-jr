@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 public class TransactionService {
 
-    private List<TransactionRequestDTO> transactionList = new ArrayList<>();
+    private final List<TransactionRequestDTO> transactionList = new ArrayList<>();
 
     public void addTransaction(TransactionRequestDTO transactionRequestDTO) {
 
@@ -54,7 +54,6 @@ public class TransactionService {
                 .toList();
 
     }
-
     public void setTransactionList(List<TransactionRequestDTO> transactionList) {
         this.transactionList = transactionList;
     }

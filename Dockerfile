@@ -2,7 +2,7 @@ FROM openjdk:23-ea-1-jdk-slim
 
 WORKDIR /app
 
-COPY target/itau_desafio-0.0.1-SNAPSHOT.jar /app/itau_desafio-0.0.1-SNAPSHOT.jar
+COPY target/itau-desafio-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 

@@ -23,9 +23,7 @@ public class StatisticsService {
 
         if (transactions.isEmpty()) {
 
-            return new StatisticsResponseDTO()
-            log.error("Nenhuma transação encontrada");
-            throw new RuntimeException("Nenhuma transação encontrada");
+            return new StatisticsResponseDTO(0L, 0.0, 0.0, 0.0, 0.0);
         }
 
         DoubleSummaryStatistics statistics = transactions.stream().mapToDouble(TransactionRequestDTO::valor).summaryStatistics();

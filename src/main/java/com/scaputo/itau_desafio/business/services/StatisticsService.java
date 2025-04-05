@@ -21,12 +21,18 @@ public class StatisticsService {
         log.info("-----> Iniciando o processamento - Busca de transações <-----");
         List<TransactionRequestDTO> transactions = transactionService.searchTransactions(searchInterval);
 
+        long start = System.currentTimeMillis();
+
         if (transactions.isEmpty()) {
 
             return new StatisticsResponseDTO(0L, 0.0, 0.0, 0.0, 0.0);
         }
 
         DoubleSummaryStatistics statistics = transactions.stream().mapToDouble(TransactionRequestDTO::valor).summaryStatistics();
+
+        long finish = System.currentTimeMillis();
+
+        System.out.println("Tempo de execução: " + (finish - start) + "ms");
 
         log.info("-----> Finalizando o processamento - Estatisticas retornadas com sucesso <-----");
         return new StatisticsResponseDTO(statistics.getCount(),
